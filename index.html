@@ -1,14 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BMI</title>
-</head>
-<body>
+  </head>
+  <body>
+    <div class="main">
+        <h1>Enter the Age between 5 to 20</h1>
+      <!-- <form action=""> -->
+      <p id="p__age">Age</p>
+      <input id="age" type="number" placeholder="Enter age" />
+      <p id="p__weight">weight</p>
+      <input id="weight" type="number" placeholder="Enter Weight" />
+      <button onclick="handelclick()">Submit</button>
+
+      <h1 id="catagory"></h1>
+      <!-- </form> -->
+    </div>
+
     <script>
-        
+      function handelclick() {
+        var age = document.getElementById("age").value;
+        var weight = document.getElementById("weight").value;
+        // var text = document.getElementById("catagory").innerHTML
+        // console.log(age);
+        // console.log(weight);
+        if (age == "") {
+          console.log("please enter your age");
+          document.getElementById("p__age").innerHTML =
+            " please enter your age";
+        } else if (weight == "") {
+          console.log("please enter your weight");
+          document.getElementById("p__weight").innerHTML =
+            " please enter your weight";
+        } 
+     
+        else if (age >= 5 && age <= 7) {
+          console.log("y");
+          if (weight < 15) {
+            document.getElementById("catagory").innerHTML="Under Weight";
+          } else if (weight >= 15 && weight <= 20) {
+            console.log("Average Weight");
+            document.getElementById("catagory").innerHTML="Average weight";
+          } else if (weight > 20) {
+            console.log("Over Weight");
+            document.getElementById("catagory").innerHTML="Over Weight";
+          }
+        }
+        else if (age >= 8 && age <= 10) {
+          console.log("y");
+          if (weight < 21) {
+            console.log("under Weight");
+            document.getElementById("catagory").innerHTML="Under Weight";
+          } else if (weight >= 21 && weight <= 25) {
+            console.log("Average Weight");
+            document.getElementById("catagory").innerHTML="Average Weight";
+          } else if (weight > 25) {
+            console.log("Over Weight");
+            document.getElementById("catagory").innerHTML="Over Weight";
+          }
+        }
+        else if (age >= 11 && age <= 15) {
+          console.log("y");
+          if (weight < 26) {
+            console.log("under Weight");
+            document.getElementById("catagory").innerHTML="Under Weight";
+          } else if (weight >= 26 && weight <= 30) {
+            console.log("Average Weight");
+            document.getElementById("catagory").innerHTML="Average Weight";
+          } else if (weight > 30) {
+            console.log("Over Weight");
+            document.getElementById("catagory").innerHTML="Over Weight";
+          }
+        }
+        else if (age >= 16 && age <= 20) {
+          console.log("y");
+          if (weight < 31) {
+            console.log("under Weight");
+            document.getElementById("catagory").innerHTML="Under Weight";
+          } else if (weight >= 31 && weight <= 40) {
+            console.log("Average Weight");
+            document.getElementById("catagory").innerHTML="Average Weight";
+          } else if (weight > 40) {
+            console.log("Over Weight");
+            document.getElementById("catagory").innerHTML="Over Weight";
+          }
+        }
+        else{
+            document.getElementById("catagory").innerHTML="Please enter valide Age";
+        }
+      }
     </script>
-</body>
+  </body>
 </html>
